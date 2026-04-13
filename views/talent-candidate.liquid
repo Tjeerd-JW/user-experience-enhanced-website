@@ -1,0 +1,93 @@
+{% render 'partials/head.liquid', title: 'candidate' %}
+
+{% assign imgURL = 'https://fdnd-agency.directus.app/assets/' | append: candidate.profile_picture %}
+{% assign contentText = '<strong>Instelling:</strong> '
+  | append: candidate.institution
+  | append: '<br><strong>Opleiding:</strong> '
+  | append: candidate.course
+  | append: '<br><strong>Variant:</strong> '
+  | append: candidate.education_variant
+  | append: '<br><strong>Huidige student</strong>'
+  | append: '<br><strong>Vooropleiding:</strong> '
+  | append: candidate.previous_course
+%}
+
+{% include 'partials/article.liquid',
+  style: 'banner video',
+  content: contentText,
+  title: candidate.title,
+  imgURL: imgURL,
+  imgALT: candidate.title
+%}
+
+{% assign candidateText = candidate.body | default: fakeData.body %}
+
+{% include 'partials/article.liquid',
+  style: 'img-left',
+  title: 'Introductie',
+  content: candidateText,
+  imgURL: imgURL,
+  imgALT: candidate.title
+%}
+
+{% assign schoolText = candidate.institution_body | default: fakeData.institution_body %}
+{% include 'partials/article.liquid',
+  style: '',
+  title: 'nominatie hogeschool',
+  content: schoolText,
+  imgURL: 'https://www.deassociatedegree.nl/wp-content/uploads/2024/02/HvA.png',
+  imgALT: candidate.title
+%}
+
+{% assign quoteText = candidate.external_stake_holder_body | default: fakeData.external_stake_holder_body %}
+{% assign quoteAuthor = candidate.external_stake_holder | default: fakeData.external_stake_holder %}
+{% include 'partials/quote.liquid', title: 'Aanbeveling externe stakeholder', quote: quoteText, author: quoteAuthor %}
+
+<section class="article-layout comments-section" id="comments">
+  <article id="pop-up" class="hidden article-layout comment-popup">
+    <h3></h3>
+    <p></p>
+    <button class="primary-button" onclick="closePopup()">sluiten</button>
+    <div>
+      <div></div>
+    </div>
+  </article>
+  <form method="post" action="/talent-awards/2026/{{candidate.id}}">
+    <h3>Reactie achterlaten</h3>
+
+    <label>
+      Naam*
+      <input required type="text" name="name">
+    </label>
+    <label>
+      Reactie*
+
+      <textarea required name="comment"></textarea>
+    </label>
+    <button type="submit">Reageer</button>
+  </form>
+
+
+  <article>
+    {% if comments.length > 0 %}
+      <h4>Reacties, {{ comments.length }}</h4>
+      <ul>
+        {% for comment in comments %}
+          <li>
+            <h5>
+              {{ comment.name | escape }}, <span>{{ comment.date_created | date: ' %d %B, %Y %H:%M' }}</span>
+            </h5>
+            <p>{{ comment.comment | escape }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Nog geen reacties....</p>
+      <p>wees de eerste met iets leuks achter te laten!</p>
+    {% endif %}
+  </article>
+</section>
+
+<script src="/js/candidate.js"></script>
+
+{% render 'partials/foot.liquid' %}

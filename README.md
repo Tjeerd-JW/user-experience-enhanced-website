@@ -1,32 +1,44 @@
+# ADConnect
 
-# Enhanced website
-Ontwerp en maak een interactieve website die snel laadt en prettig te gebruiken is.
-
-De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/enhanced-website/blob/main/docs/INSTRUCTIONS.md)
+De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/server-side-rendering-server-side-website/blob/main/docs/INSTRUCTIONS.md)
 
 
 ## Inhoudsopgave
 
   * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
   * [Kenmerken](#kenmerken)
   * [Installatie](#installatie)
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
 
 ## Beschrijving
-<!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar je live site 🌐-->
 
-## Gebruik
-<!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
+Ad Connect is een website om meer informatie te krijgen over AD's. Ik heb deze sprint tijd besteed aan de awards kandidaten pagina.
+Je kan hem [hier](https://the-web-is-for-everyone-interactive-h4wb.onrender.com/talent-awards/2026) bekijken.
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+
+Dit project is gemaakt met liquid en nodejs. Ik heb de pagina opgebouwd met partials zodat de blokken content hergebruikt kunnen worden tijdens de volgende sprint en er minder herhalende code is.
+Er word nog deels gebruik gemaakt van dummy data omdat de database nog niet klaar is met alle benodigde data.
+
+### Comments
+
+Je kan nu ook comments achterlaten op de pagina van de genomineerde kandidaten! Met een success melding en een faal melding, wanneer de comment is geplaatst is het niet mogelijk om direct nog 1 te plaatsen om spammen te voorkomen. Hieronder kan je de demo video bekijken.
+
+![Bezigmetopnemen2026-04-01095422-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/fc93ef84-08df-44ab-8a9f-fbe739d46f48)
+
 
 ## Installatie
-<!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
+
+Om dit project op te starten volg je deze stappen
+
+1. clone het project lokaal
+2. installeer het project
+   ```bash
+   npm install
+3. start het project op
+   ```bash
+   npm run start
 
 ## Bronnen
 

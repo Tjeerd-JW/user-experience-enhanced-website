@@ -1,0 +1,12 @@
+{% render 'partials/head.liquid', title: 'awards', path: path  %}
+
+{% include 'partials/article.liquid', style: 'banner' %}
+
+{% include 'partials/article.liquid', style: 'img-left' %}
+
+<article>
+    <h3>bekijk de kandidaten van 2026</h3>
+    {% include 'partials/link.liquid', link: '/talent-awards/2026', text: "2026", style: 'primary-button' %}
+</article>
+
+{% render 'partials/foot.liquid' %}

@@ -1,0 +1,88 @@
+html {
+
+  /* Primary colors */
+  --color-primary-100: hsl(213, 100%, 8%);
+  --color-primary-200: hsl(213, 100%, 15%);
+  --color-primary-300: hsl(213, 100%, 18%);
+  --color-primary-400: hsl(213, 100%, 28%);
+  --color-primary-500: hsl(213, 100%, 38%);
+  --color-primary-600: hsl(213, 100%, 48%);
+  --color-primary-700: hsl(213, 23%, 58%);
+  --color-primary-800: hsl(213, 100%, 68%);
+  --color-primary-900: hsl(213, 100%, 78%);
+  --color-primary-950: hsl(213, 100%, 88%);
+
+  /* Accent colors */
+
+  --color-accent-100: hsl(10, 79%, 45%);
+  --color-accent-200: hsl(10, 79%, 55%);
+  --color-accent-300: hsl(10, 90%, 65%);
+  --color-accent-400: hsl(10, 90%, 75%);
+  --color-accent-500: hsl(10, 90%, 85%);
+
+  /* Neutral colors */
+
+  --color-neutral-100: hsl(213, 21%, 9%);
+  --color-neutral-200: hsl(213, 22%, 12%);
+  --color-neutral-300: hsl(213, 23%, 18%);
+  --color-neutral-400: hsl(213, 20%, 33%);
+  --color-neutral-500: hsl(213, 19%, 36%);
+  --color-neutral-600: hsl(212, 18%, 69%);
+  --color-neutral-700: hsl(213, 8%, 84%);
+  --color-neutral-800: hsl(0, 0%, 98%);
+
+  @media (prefers-color-scheme: light) {
+
+    /* Primary */
+    --color-primary-100: hsl(213, 100%, 88%);
+    --color-primary-200: hsl(213, 100%, 78%);
+    --color-primary-300: hsl(213, 100%, 68%);
+    --color-primary-400: hsl(213, 23%, 58%);
+    --color-primary-500: hsl(213, 100%, 48%);
+    --color-primary-600: hsl(213, 100%, 38%);
+    --color-primary-700: hsl(213, 100%, 28%);
+    --color-primary-800: hsl(213, 100%, 18%);
+    --color-primary-900: hsl(213, 100%, 15%);
+    --color-primary-950: hsl(213, 100%, 8%);
+
+    /* Accent */
+    --color-accent-100: hsl(10, 90%, 85%);
+    --color-accent-200: hsl(10, 90%, 75%);
+    --color-accent-300: hsl(10, 90%, 65%);
+    --color-accent-400: hsl(10, 79%, 55%);
+    --color-accent-500: hsl(10, 79%, 45%);
+
+    /* Neutral */
+    --color-neutral-100: hsl(0, 0%, 98%);
+    --color-neutral-200: hsl(213, 8%, 84%);
+    --color-neutral-300: hsl(212, 18%, 69%);
+    --color-neutral-400: hsl(213, 19%, 36%);
+    --color-neutral-500: hsl(213, 20%, 33%);
+    --color-neutral-600: hsl(213, 23%, 18%);
+    --color-neutral-700: hsl(213, 22%, 12%);
+    --color-neutral-800: hsl(213, 21%, 9%);
+
+  }
+
+
+  /* styling */
+
+  --button-radius: 15px;
+  --img-radius: 1em 1em 0 0;
+
+  /* text */
+  font-family: sans-serif;
+
+}
+
+
+p {
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}

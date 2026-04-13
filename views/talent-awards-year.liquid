@@ -1,0 +1,46 @@
+{% render 'partials/head.liquid', title: 'awards', path: path %}
+
+{% comment %} {% include 'partials/article.liquid', style: 'banner' %} {% endcomment %}
+
+<section class=" nominee-list ">
+  <article>
+    <h2>Genomideerde</h2>
+    <ul>
+      {% for nominee in nominations %}
+        <li>
+          <h3>{{ nominee.title }}</h3>
+          <img
+            class=""
+            {% if nominee.profile_picture %}
+              src="{{'https://fdnd-agency.directus.app/assets/' | append:  nominee.profile_picture | append: "?width=250"}}"
+            {% else %}
+              src="https://static.wikia.nocookie.net/overwatch_gamepedia/images/6/6f/Icon-Ramattra.png/revision/latest/scale-to-width-down/250?cb=20221206190323"
+            {% endif %}
+            alt=" {{ nominee.title }}"
+          >
+          <p>{{ nominee.institution | default: 'Hogeschool van games throwen' }}</p>
+          <a href="{{'/talent-awards/2026/' | append: nominee.id}}" class="primary-button"> bekijk nominatie </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </article>
+</section>
+
+{% comment %} {{ nominations | json }} {% endcomment %}
+{% comment %}
+  {% for nominee in nominations %}
+    <article>
+      <h2>
+        {{ nominee.title }}
+      </h2>
+      <br>
+      <p>
+        {{ nominee.institution }}
+      </p>
+      <br>
+      <a href="{{'/talent-awards/2026/' | append: nominee.id}}" class="primary-button"> bekijk nominatie </a>
+    </article>
+  {% endfor %}
+{% endcomment %}
+
+{% render 'partials/foot.liquid' %}
