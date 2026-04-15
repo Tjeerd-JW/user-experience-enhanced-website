@@ -1,0 +1,18 @@
+{% render 'partials/head.liquid', title: 'nieuws', path: path %}
+
+<h1>test news page</h1>
+
+<ul>
+  {% for article in news %}
+    <li>
+      <p>
+        {{ article.description }}
+      </p>
+      <br>
+      <a href="{{'/nieuws/' | append: article.uuid}}" class="primary-button"> lees meer </a>
+      </li>
+      <br>
+  {% endfor %}
+</ul>
+
+{% render 'partials/foot.liquid' %}

@@ -64,6 +64,7 @@ app.listen(app.get('port'), function () {
    console.log(`Application started on http://localhost:${app.get('port')}`)
 })
 
+// nieuws pagina routes
 
 app.get('/talent-awards', async function (request, response) {
    const awardsResponse = await fetch(apiURL + 'nominations')
@@ -82,7 +83,6 @@ app.get('/talent-awards/:year', async function (request, response) {
       path: request.path
    })
 })
-
 
 
 app.get('/talent-awards/:year/:id', async function (request, response) {
@@ -158,13 +158,38 @@ app.post('/talent-awards/:year/:id', async function (request, response) {
 
 })
 
+// nieuws pagina routes
 
-app.use((request, response, next) => {
-   //   response.status(404).send("Sorry can't find that!")
-   response.render('404.liquid')
+app.get('/nieuws', async function (request, response) {
+   const newsResponse = await fetch(apiURL + 'news')
+   const newsResponseJSON = await newsResponse.json()
 
+   response.render('news.liquid', {
+      path: request.path,
+      news: newsResponseJSON.data
+   })
 })
 
+app.get('/nieuws/:uuid', async function (request, response) {
+   const newsParams = new URLSearchParams({
+      'filter[uuid]': request.params.uuid
+   })
+   const newsResponse = await fetch(apiURL + 'news?' + newsParams)
+   const newsResponseJSON = await newsResponse.json()
+
+   const commentParams = new URLSearchParams({
+      'filter[news]': request.params.uuid,
+      'sort': '-date_created'
+   })
+   const commentResponse = await fetch(apiURL + 'news_comments?' + commentParams)
+   const commentResponseJSON = await commentResponse.json()
+
+   response.render('news-article.liquid', {
+      path: request.path,
+      news: newsResponseJSON.data[0],
+      comments: commentResponseJSON.data
+   })
+})
 
 // alle pagina's
 
@@ -184,13 +209,6 @@ app.get('/over-ad/faq', async function (request, response) {
    response.render('faq.liquid')
 })
 
-app.get('/nieuws', async function (request, response) {
-   response.render('news.liquid')
-})
-
-app.get('/nieuws/:title', async function (request, response) {
-   response.render('news-article.liquid')
-})
 
 app.get('/publicaties', async function (request, response) {
    response.render('publicaties.liquid')
@@ -210,4 +228,12 @@ app.get('/events', async function (request, response) {
 
 app.get('/events/:name', async function (request, response) {
    response.render('events.liquid')
+})
+
+// 404 page
+
+app.use((request, response, next) => {
+   //   response.status(404).send("Sorry can't find that!")
+   response.render('404.liquid')
+
 })

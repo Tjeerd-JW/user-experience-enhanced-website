@@ -1,0 +1,11 @@
+{% render 'partials/head.liquid', title: 'article', path: path %}
+
+<h1>artikel</h1>
+
+{{ news.description }}
+
+<h2>comments</h2>
+
+{{ comments | json }}
+
+{% render 'partials/foot.liquid' %}
