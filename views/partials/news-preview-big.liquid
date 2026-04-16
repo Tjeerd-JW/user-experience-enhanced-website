@@ -1,0 +1,8 @@
+<section class="news-preview-big">
+  <article>
+    <h2>{{ title }}</h2>
+    <p>{{ preview }}</p>
+    <img src="{{'https://fdnd-agency.directus.app/assets/' | append:  imgURL}}" alt="{{imgALT}}">
+    {% include './partials/link.liquid', link: '/news/{{uuid}}', text: 'Meer informatie', style: 'primary-button' %}
+  </article>
+</section>

@@ -1,5 +1,20 @@
 {% render 'partials/head.liquid', title: 'nieuws', path: path %}
 
+{% include 'partials/article.liquid',
+  style: 'banner',
+  content: 'Op deze pagina vind je updates en korte verslagen van georganiseerde evenementen.',
+  title: 'Nieuws pagina',
+  imgURL: 'https://adconnect.dev.fdnd.nl/_app/immutable/assets/heronews.7CmszSLI.webp',
+  imgALT: 'news banner'
+%}
+
+{% include 'partials/news-preview-big.liquid', 
+  title: news[0].title, 
+  preview: news[0].description, 
+  body: news[0].body, 
+  imgURL: news[0].hero
+  %}
+
 <h1>test news page</h1>
 
 <ul>
@@ -10,8 +25,8 @@
       </p>
       <br>
       <a href="{{'/nieuws/' | append: article.uuid}}" class="primary-button"> lees meer </a>
-      </li>
-      <br>
+    </li>
+    <br>
   {% endfor %}
 </ul>
 
