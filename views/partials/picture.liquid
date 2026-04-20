@@ -1,0 +1,14 @@
+<picture class=" {{ class }} " >
+  <source
+    type="image/avif"
+    srcset="{{ 'https://fdnd-agency.directus.app/assets/' | append:  imgURL  }}?format=avif&q=80"
+  >
+    <source
+    type="image/webp"
+    srcset="{{ 'https://fdnd-agency.directus.app/assets/' | append:  imgURL  }}?format=webp"
+  >
+  <img
+    src="{{'https://fdnd-agency.directus.app/assets/' | append:  imgURL | append:'?width=' | append: width }} "
+    alt="{{ imgALT }}"
+  >
+</picture>

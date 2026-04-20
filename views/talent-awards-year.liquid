@@ -9,7 +9,16 @@
       {% for nominee in nominations %}
         <li>
           <h3>{{ nominee.title }}</h3>
-          <img
+          {%
+            include 'partials/picture.liquid'
+            
+            imgURL: nominee.profile_picture,
+            width: 250
+            imgAlt: nominee.title
+
+          %}
+
+          {% comment %} <img
             class=""
             {% if nominee.profile_picture %}
               src="{{'https://fdnd-agency.directus.app/assets/' | append:  nominee.profile_picture | append: "?width=250"}}"
@@ -17,7 +26,7 @@
               src="https://static.wikia.nocookie.net/overwatch_gamepedia/images/6/6f/Icon-Ramattra.png/revision/latest/scale-to-width-down/250?cb=20221206190323"
             {% endif %}
             alt=" {{ nominee.title }}"
-          >
+          > {% endcomment %}
           <p>{{ nominee.institution | default: 'Hogeschool van games throwen' }}</p>
           <a href="{{'/talent-awards/2026/' | append: nominee.id}}" class="primary-button"> bekijk nominatie </a>
         </li>
