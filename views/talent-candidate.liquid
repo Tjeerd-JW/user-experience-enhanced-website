@@ -66,8 +66,7 @@
     <button type="submit">Reageer</button>
   </form>
 
-
-  <article>
+  <article class="comment-list">
     {% if comments.length > 0 %}
       <h4>Reacties, {{ comments.length }}</h4>
       <ul>
@@ -87,10 +86,39 @@
   </article>
 </section>
 
-<script src="/js/candidate.js"></script>
+{% comment %} <script src="/js/candidate.js"></script> {% endcomment %}
 
 <script type="module">
+  const commentForm = document.querySelector('form');
+  const commentSection = document.querySelector('.comments-section');
+  const formButton = document.querySelector('form button');
+  const commentList = document.querySelector('.comment-list');
 
+  commentForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    console.log('submit');
+
+    formButton.textContent = 'Loading...';
+
+    // commentdata voorbereiden
+    let commentData = new FormData(commentForm);
+    const response = await fetch(commentForm.action, {
+      method: commentForm.method,
+      body: new URLSearchParams(commentData),
+    });
+
+    // de html pagina als tekst
+    const responseData = await response.text();
+
+    const parser = new DOMParser();
+    const responseDOM = parser.parseFromString(responseData, 'text/html');
+
+    const newState = responseDOM.querySelector('.comment-list');
+
+
+    commentList.innerHTML = newState.innerHTML;
+    formButton.textContent = 'gelukt!';
+  });
 </script>
 
 {% render 'partials/foot.liquid' %}

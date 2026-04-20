@@ -148,10 +148,10 @@ app.post('/talent-awards/:year/:id', async function (request, response) {
          }
       })
       console.log(request.body)
-      response.redirect(303, `/talent-awards/${request.params.year}/${request.params.id}?success=true#comments`)
+      response.redirect(303, `/talent-awards/${request.params.year}/${request.params.id}`)
    } catch (error) {
       console.log(error)
-      response.redirect(303, `/talent-awards/${request.params.year}/${request.params.id}?success=false#comments`)
+      response.redirect(303, `/talent-awards/${request.params.year}/${request.params.id}`)
 
    }
 
