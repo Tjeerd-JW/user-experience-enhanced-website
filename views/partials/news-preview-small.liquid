@@ -1,0 +1,9 @@
+{% assign link = '/nieuws/' | append: uuid %}
+
+<article class="news-preview-small">
+  <h2>{{ title }}</h2>
+  <p>{{ preview | truncate: 75 }}</p>
+
+  {% include './partials/picture.liquid', imgURL: imgURL, imgALT: imgALT %}
+  {% include './partials/link.liquid', link: link, text: 'Meer informatie', style: 'primary-button' %}
+</article>

@@ -8,26 +8,28 @@
   imgALT: 'news banner'
 %}
 
-{% include 'partials/news-preview-big.liquid', 
-  title: news[0].title, 
-  preview: news[0].description, 
-  body: news[0].body, 
-  imgURL: news[0].hero
-  %}
+{% include 'partials/news-preview-big.liquid',
+  title: news[0].title,
+  preview: news[0].description,
+  body: news[0].body,
+  imgURL: news[0].hero,
+  imgALT: news[0].title,
+  uuid: news[0].uuid
+%}
 
-<h1>test news page</h1>
+<h2>Alle nieuws</h2>
+<section class="news-list">
 
-<ul>
-  {% for article in news %}
-    <li>
-      <p>
-        {{ article.description }}
-      </p>
-      <br>
-      <a href="{{'/nieuws/' | append: article.uuid}}" class="primary-button"> lees meer </a>
-    </li>
-    <br>
+  {% for article in news offset:1 %}
+    {% include 'partials/news-preview-small.liquid',
+      title: article.title,
+      preview: article.description,
+      body: article.body,
+      imgURL: article.hero,
+      imgALT: article.title,
+      uuid: article.uuid
+    %}
   {% endfor %}
-</ul>
+</section>
 
 {% render 'partials/foot.liquid' %}
