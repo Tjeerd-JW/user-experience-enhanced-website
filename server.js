@@ -191,6 +191,29 @@ app.get('/nieuws/:uuid', async function (request, response) {
    })
 })
 
+app.post('/nieuws/:uuid', async function (request, response) {
+   try {
+      await fetch(apiURL + 'news_comments', {
+         method: 'POST',
+         body: JSON.stringify({
+            news: request.params.uuid,
+            name: request.body.name,
+            comment: request.body.comment
+         }),
+         headers: {
+            'Content-Type': 'application/json;charset=UTF-8'
+
+         }
+      })
+      response.redirect(303, `/nieuws/${request.params.uuid}`)
+   } catch (error) {
+      console.log(error)
+      response.redirect(303, `/nieuws/${request.params.uuid}`)
+
+   }
+
+})
+
 // alle pagina's
 
 app.get('/over-ons', async function (request, response) {

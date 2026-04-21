@@ -6,6 +6,75 @@
 
 <h2>comments</h2>
 
-{{ comments | json }}
+<section class="article-layout comments-section" id="comments">
+  <form method="post" action="/nieuws/{{news.uuid}}">
+    <h3>Reactie achterlaten</h3>
+
+    <label>
+      Naam*
+      <input required type="text" name="name">
+    </label>
+    <label>
+      Reactie*
+      <textarea required name="comment"></textarea>
+    </label>
+    <button type="submit">Reageer</button>
+  </form>
+
+  <article class="comment-list">
+    {% if comments.length > 0 %}
+      <h4>Reacties, {{ comments.length }}</h4>
+      <ul>
+        {% for comment in comments %}
+          <li>
+            <h5>
+              {{ comment.name | escape }}, <span>{{ comment.date_created | date: ' %d %B, %Y %H:%M' }}</span>
+            </h5>
+            <p>{{ comment.comment | escape }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Nog geen reacties....</p>
+      <p>wees de eerste met iets leuks achter te laten!</p>
+    {% endif %}
+  </article>
+</section>
+
+<script type="module">
+  const commentForm = document.querySelector('form');
+  const commentSection = document.querySelector('.comments-section');
+  const formButton = document.querySelector('form button');
+  const commentList = document.querySelector('.comment-list');
+
+  commentForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    console.log('submit');
+
+    formButton.textContent = 'Loading...';
+
+    // commentdata voorbereiden
+    let commentData = new FormData(commentForm);
+    const response = await fetch(commentForm.action, {
+      method: commentForm.method,
+      body: new URLSearchParams(commentData),
+    });
+
+console.log(response)
+    // de html pagina als tekst
+    const responseData = await response.text();
+
+    const parser = new DOMParser();
+    const responseDOM = parser.parseFromString(responseData, 'text/html');
+
+    
+    const newState = responseDOM.querySelector('.comment-list');
+    console.log(newState.innerHTML)
+
+
+    commentList.innerHTML = newState.innerHTML;
+    formButton.textContent = 'gelukt!';
+  });
+</script>
 
 {% render 'partials/foot.liquid' %}
