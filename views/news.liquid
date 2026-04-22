@@ -14,20 +14,24 @@
   body: news[0].body,
   imgURL: news[0].hero,
   imgALT: news[0].title,
-  uuid: news[0].uuid
+  uuid: news[0].uuid,
+  imgHeight: 300,
+  imgWidth: 300
 %}
 
 <h2>Alle nieuws</h2>
 <section class="news-list">
-
-  {% for article in news offset:1 %}
+  {% for article in news offset: 1 %}
     {% include 'partials/news-preview-small.liquid',
       title: article.title,
       preview: article.description,
       body: article.body,
       imgURL: article.hero,
       imgALT: article.title,
-      uuid: article.uuid
+      uuid: article.uuid,
+      imgHeight: 300,
+      imgWidth: 300,
+      loading: 'lazy'
     %}
   {% endfor %}
 </section>

@@ -1,10 +1,17 @@
- {% assign link =  '/nieuws/' | append: uuid %} 
+{% assign link = '/nieuws/' | append: uuid %}
 
 <section class="news-preview-big">
   <article>
     <h2>{{ title }}</h2>
     <p>{{ preview }}</p>
-  {% include './partials/picture.liquid', imgURL: imgURL, imgALT:  imgALT  %}
+    {% 
+      include './partials/picture.liquid', 
+      imgURL: imgURL, 
+      imgALT: imgALT, 
+      width: imgWidth, 
+      height: imgHeight,
+      priority: 'high'
+    %}
     {% include './partials/link.liquid', link: link, text: 'Meer informatie', style: 'primary-button' %}
-    </article>
+  </article>
 </section>
