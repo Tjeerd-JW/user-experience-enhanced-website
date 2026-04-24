@@ -636,7 +636,8 @@ header {
     padding: 1.5rem;
     display: grid;
     width: clamp(350px, 100%, 360px);
-    gap: .5rem ;
+    gap: .5rem;
+
     h2 {}
 
     p {}
@@ -645,6 +646,7 @@ header {
         grid-row: 1;
         display: flex;
         justify-content: center;
+
         img {
             width: 350px;
             height: 350px;
@@ -654,6 +656,23 @@ header {
 
     a {
         height: 20px;
+    }
+}
+
+.news-button {
+    background-color: transparent;
+    padding: .75rem 1.25rem;
+    border-radius: var(--button-radius);
+    border: solid 1.5px var(--color-neutral-800);
+    transition: .2s ease;
+    color: var(--color-neutral-800);
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--color-neutral-800);
+        color: var(--color-primary-200);
+        border: solid 1.5px var(--color-accent-100);
     }
 }
 
