@@ -41,16 +41,15 @@
 
 {% assign quoteText = candidate.external_stake_holder_body | default: fakeData.external_stake_holder_body %}
 {% assign quoteAuthor = candidate.external_stake_holder | default: fakeData.external_stake_holder %}
-{% include 'partials/quote.liquid', title: 'Aanbeveling externe stakeholder', quote: quoteText, author: quoteAuthor %}
+{% include 'partials/quote.liquid', 
+  title: 'Aanbeveling externe stakeholder', 
+  quote: quoteText, 
+  author: quoteAuthor
+%}
 
 <section class="article-layout comments-section" id="comments">
   <article id="pop-up" class="hidden article-layout comment-popup">
-    <h3></h3>
-    <p></p>
-    <button class="primary-button" onclick="closePopup()">sluiten</button>
-    <div>
-      <div></div>
-    </div>
+
   </article>
   <form method="post" action="/talent-awards/2026/{{candidate.id}}">
     <h3>Reactie achterlaten</h3>

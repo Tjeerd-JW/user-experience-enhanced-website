@@ -1,11 +1,13 @@
 {% assign link = '/nieuws/' | append: uuid %}
 
+{% assign imgLink = 'https://fdnd-agency.directus.app/assets/' |  append: imgURL %}
+
 <article class="news-preview-small">
   <h2>{{ title }}</h2>
   <p>{{ preview | truncate: 75 }}</p>
 
   {% include './partials/picture.liquid',
-    imgURL: imgURL,
+    imgURL: imgLink,
     imgALT: imgALT,
     height: imgHeight,
     width: imgWidth,
