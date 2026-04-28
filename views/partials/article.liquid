@@ -1,14 +1,25 @@
 <section class="article-layout {{ style }}">
   <article>
-    <h2>{{title}}</h2>
+    <h2>{{ title }}</h2>
     <p>
-     {{content}}
+      {{ content }}
     </p>
     {% if button == true %}
       {% include './partials/link.liquid', link: '#', text: 'Lees meer', style: 'primary-button' %}
     {% endif %}
-    <figure>
-      <img src="{{imgURL}}" alt="{{imgALT}}" >
-    </figure>
+
+    {% render './partials/picture.liquid',
+      imgURL: imgURL,
+      imgALT: imgALT,
+      imgHeight: 300,
+      imgWidth: 300,
+      loading: 'lazy'
+    %}
+
+    {% comment %}
+      <figure>
+        <img src="{{imgURL}}" alt="{{imgALT}}" >
+      </figure>
+    {% endcomment %}
   </article>
 </section>
