@@ -9,7 +9,7 @@
 <section class="article-layout comments-section" id="comments">
   <form method="post" action="/nieuws/{{news.uuid}}">
     <h3>Reactie achterlaten</h3>
-
+    <p></p>
     <label>
       Naam*
       <input required type="text" name="name">
@@ -49,9 +49,9 @@
 
   commentForm.addEventListener('submit', async function (event) {
     event.preventDefault();
-    console.log('submit');
 
     formButton.textContent = 'Loading...';
+    commentSection.classList.add('loading-comments');
 
     // commentdata voorbereiden
     let commentData = new FormData(commentForm);
@@ -60,20 +60,21 @@
       body: new URLSearchParams(commentData),
     });
 
-console.log(response)
+    console.log(response);
     // de html pagina als tekst
     const responseData = await response.text();
 
     const parser = new DOMParser();
     const responseDOM = parser.parseFromString(responseData, 'text/html');
 
-    
     const newState = responseDOM.querySelector('.comment-list');
-    console.log(newState.innerHTML)
-
 
     commentList.innerHTML = newState.innerHTML;
+    commentSection.classList.remove('loading-comments');
+    commentSection.classList.add('success-comments');
     formButton.textContent = 'gelukt!';
+    document.querySelector('form h3').textContent = 'Je reactie is succesvol geplaatst geplaatst!!';
+    document.querySelector('form p').textContent = 'Bedankt voor je deelname!';
   });
 </script>
 
