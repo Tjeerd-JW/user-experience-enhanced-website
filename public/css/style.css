@@ -730,6 +730,41 @@ header {
     }
 }
 
+
+.news-article {
+    width: 100%;
+
+    article {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: auto;
+        padding: .75rem;
+
+        .title {
+            grid-row: 2;
+            font-size: 2rem;
+        }
+
+        .date {
+            grid-row: 1;
+            font-weight: bold;
+            color: var(--color-neutral-700);
+        }
+
+        .author {
+            background: var(--color-primary-500);
+            border-radius: 16px;
+            padding: 0.4rem;
+            span{
+                font-weight: bold;
+                font-size: 19px;
+            }
+
+        }
+    }
+}
+
 .news-button {
     background-color: transparent;
     padding: .75rem 1.25rem;

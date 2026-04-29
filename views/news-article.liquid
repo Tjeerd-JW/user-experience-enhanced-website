@@ -1,10 +1,21 @@
 {% render 'partials/head.liquid', title: 'article', path: path %}
 
-<h1>artikel</h1>
+{% assign imgURL = 'https://fdnd-agency.directus.app/assets/' | append: news.hero %}
 
-{{ news.description }}
+{% render 'partials/article.liquid',
+  title: news.title,
+  content: news.description,
+  style: 'banner',
+  imgURL: imgURL,
+  imgALT: news.title
+%}
 
-<h2>comments</h2>
+{% render 'partials/news-content.liquid',
+  title: news.title,
+  content: news.body,
+  author: news.author,
+  date: news.date_created
+%}
 
 <section class="article-layout comments-section" id="comments">
   <form method="post" action="/nieuws/{{news.uuid}}">
