@@ -2,11 +2,13 @@
 const menu = document.querySelector('nav details')
 const body = document.querySelector('body')
 
+
 menu.addEventListener("toggle", function () {
     if (menu.open) {
-        console.log('open')
+        body.style.overflow = 'hidden'
     } else {
-        console.log('close')
+        body.style.overflow = ''
+
     }
 
 })
@@ -22,6 +24,7 @@ document.addEventListener("click", (event) => {
 
 })
 
+// escape klikken sluit het menu
 document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
         menu.removeAttribute('open')
