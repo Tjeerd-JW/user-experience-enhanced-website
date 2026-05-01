@@ -126,6 +126,12 @@ header {
                     scale: 1.1;
                 }
 
+                &:focus {
+                    border: solid 2px var(--color-primary-600);
+                    width: 40px;
+                    outline-offset: 2.5px;
+                }
+
                 .open {
                     display: block;
 
@@ -210,6 +216,23 @@ header {
         width: 0%;
         background: currentColor;
         transition: .3s ease;
+    }
+
+    &:focus {
+        outline-offset: 6px;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            transform: scaleX(1);
+            transition: .3s ease;
+
+        }
     }
 }
 
