@@ -20,7 +20,7 @@
 %}
 
 <h2>Alle nieuws</h2>
-<section class="news-list">
+<section class="news-list layout">
   {% for article in news offset: 1 %}
     {% include 'partials/news-preview-small.liquid',
       title: article.title,

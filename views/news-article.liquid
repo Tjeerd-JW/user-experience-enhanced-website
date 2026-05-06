@@ -17,8 +17,8 @@
   date: news.date_created
 %}
 
-<section class="article-layout comments-section" id="comments">
-  <form method="post" action="/nieuws/{{news.uuid}}">
+<section class="comments-section layout" id="comments">
+  <form method="post" action="/nieuws/{{news.uuid}}" class="container">
     <h3>Reactie achterlaten</h3>
     <p></p>
     <label>
@@ -32,7 +32,7 @@
     <button type="submit">Reageer</button>
   </form>
 
-  <article class="comment-list">
+  <article class="comment-list container">
     {% if comments.length > 0 %}
       <h4>Reacties, {{ comments.length }}</h4>
       <ul>

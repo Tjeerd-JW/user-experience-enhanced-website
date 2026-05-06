@@ -1,5 +1,24 @@
 html {
 
+  /* styling */
+
+  --button-radius: 16px;
+  --img-radius: 1em 1em 0 0;
+
+  /* spacing */
+
+  --space-2xs: 4px;   /* 0.25rem */
+  --space-xs: 8px;    /* 0.5rem */
+  --space-sm: 12px;   /* 0.75rem */
+  --space-md: 16px;   /* 1rem */
+  --space-lg: 24px;   /* 1.5rem */
+  --space-xl: 32px;   /* 2rem */ 
+  --space-2xl: 48px;  /* 3rem */
+  --space-3xl: 64px;  /* 4rem */
+
+    /* text */
+    font-family: sans-serif;
+
   /* Primary colors */
   --color-primary-100: hsl(213, 100%, 8%);
   --color-primary-200: hsl(213, 100%, 15%);
@@ -65,13 +84,7 @@ html {
   }
 
 
-  /* styling */
 
-  --button-radius: 15px;
-  --img-radius: 1em 1em 0 0;
-
-  /* text */
-  font-family: sans-serif;
 
 }
 
@@ -83,6 +96,20 @@ p {
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* class voor sections om zich te houden aan de grid */
+/* parent */
+.layout {
+  width: 100%;
+  padding: var(--space-2xl) 0;
+}
+
+/* child */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
 }

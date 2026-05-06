@@ -10,13 +10,16 @@
     <script src="/js/menu.js" defer></script>
   </head>
   <body>
-    <header>
-      <ul>
+    <header class="layout nav-bar">
+      <ul class="container top-bar">
         <li>{% include './partials/link.liquid', link: '#', text: "FAQ's", style: 'nav-link' %}</li>
         <li>{% include './partials/link.liquid', link: '#', text: 'Over ons', style: 'nav-link' %}</li>
         <li>{% include './partials/link.liquid', link: '#', text: 'Contact', style: 'nav-link' %}</li>
       </ul>
-      <nav>
+      <nav class="layout bottom-bar">
+        <div class=" container nav-inner">
+
+       
         <ul class="nav-list">
           <li>
             <img src="/img/logo-big.svg" alt="Overlegplatform ad" width="201" height="57" fetchpriority="high">
@@ -61,6 +64,7 @@
 
           </ul>
         </details>
+         </div>
       </nav>
     </header>
     <main>
