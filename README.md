@@ -24,13 +24,22 @@ Er word nog deels gebruik gemaakt van dummy data omdat de database nog niet klaa
 
 Op mobiele apparaten is er een hamburgermenu om gemakkelijk de website te navigeren deze is gemaakt met het principe van **progressive enhancement**. Het hamburger menu werkt helemaal zonder javascript door gebruik te maken van de details en summary elementen. Maar wanneer een gebruiker wel javascript heeft word het menu nog beter! Dan komt er een scrolllock, worden alle niet menu links inert, kan je het menu sluiten door ernaast te klikken, en kan het gesloten worden door op escape te klikken. Bekijk het voorbeeld hieronder.
 
+<img width="480" height="426" alt="burger menu" src="https://github.com/user-attachments/assets/453cb99f-e91c-4b2d-8262-7dd9b9e3f8d6" />
+
+
 ### Nieuws pagina
 
 Je kan nu ook alle nieuwste nieuws bekijken op de nieuws pagina! met een responsive layout voor zowel mobiel en dekstop. Op de pagina staat her meest recente artikel bovenaan extra groot. Daaronder staan alle andere artikelen in een grid. Klik op de knop bij het artikel om hem te bekijken. Op de artikel pagina kan je het nieuws artikel lezen en onderaan staat de auteur ook kun je comments achter laten lees hieronder meer. Bekijk hieronder hoe het er uit ziet
 
+<img width="496" height="493" alt="afbeelding" src="https://github.com/user-attachments/assets/32ed085e-c3ba-4180-b736-2b860893a937" />
+
+
 ### no refresh comments
 
 Wil je je mening achter laten over het nieuws artikel? Dat kan nu zelfs zonder dat de hele pagina refresht! Je kan gemakkelijk je comment intypen met je naam en vervolgens op plaatsen als je alles goed heb ingevuld dan zal je zien dat je comment er staat zonder een refresh!! Bekijk hieronder hoe het er uit ziet in actie.
+
+<img width="542" height="498" alt="comments record" src="https://github.com/user-attachments/assets/c59fb6d7-fd74-40dc-b4dc-cf8c158ea058" />
+
 
 
 ## Installatie
