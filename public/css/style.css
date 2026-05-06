@@ -50,6 +50,7 @@ header {
 
     .bottom-bar {
         padding: 0;
+
         .nav-inner {
             display: flex;
             align-items: center;
@@ -378,12 +379,11 @@ header {
         display: grid;
         grid-template-columns: 1fr;
         gap: 2rem;
-        max-width: 1200px;
-        margin: auto;
         justify-items: anchor-center;
         background: var(--color-primary-100);
         border-radius: 16px;
-        padding: 1.25rem 0;
+        padding: var(--space-md) 0;
+        margin: 0 var(--space-md);
 
         h2 {
             text-align: left;
