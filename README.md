@@ -13,8 +13,7 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/server-
 
 ## Beschrijving
 
-Ad Connect is een website om meer informatie te krijgen over AD's. Ik heb deze sprint tijd besteed aan de awards kandidaten pagina.
-Je kan hem [hier](https://the-web-is-for-everyone-interactive-h4wb.onrender.com/talent-awards/2026) bekijken.
+Ad Connect is een website om meer informatie te krijgen over AD's. Ik heb deze sprint gewerkt aan de nieuws pagina, hamburger menu en no refresh comments. Je kan de hele pagina [hier](https://user-experience-enhanced-website-kf40.onrender.com/) bekijken!
 
 ## Kenmerken
 
