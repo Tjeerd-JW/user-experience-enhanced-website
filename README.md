@@ -21,11 +21,17 @@ Je kan hem [hier](https://the-web-is-for-everyone-interactive-h4wb.onrender.com/
 Dit project is gemaakt met liquid en nodejs. Ik heb de pagina opgebouwd met partials zodat de blokken content hergebruikt kunnen worden tijdens de volgende sprint en er minder herhalende code is.
 Er word nog deels gebruik gemaakt van dummy data omdat de database nog niet klaar is met alle benodigde data.
 
-### Comments
+### Hamburger menu
 
-Je kan nu ook comments achterlaten op de pagina van de genomineerde kandidaten! Met een success melding en een faal melding, wanneer de comment is geplaatst is het niet mogelijk om direct nog 1 te plaatsen om spammen te voorkomen. Hieronder kan je de demo video bekijken.
+Op mobiele apparaten is er een hamburgermenu om gemakkelijk de website te navigeren deze is gemaakt met het principe van **progressive enhancement**. Het hamburger menu werkt helemaal zonder javascript door gebruik te maken van de details en summary elementen. Maar wanneer een gebruiker wel javascript heeft word het menu nog beter! Dan komt er een scrolllock, worden alle niet menu links inert, kan je het menu sluiten door ernaast te klikken, en kan het gesloten worden door op escape te klikken. Bekijk het voorbeeld hieronder.
 
-![Bezigmetopnemen2026-04-01095422-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/fc93ef84-08df-44ab-8a9f-fbe739d46f48)
+### Nieuws pagina
+
+Je kan nu ook alle nieuwste nieuws bekijken op de nieuws pagina! met een responsive layout voor zowel mobiel en dekstop. Op de pagina staat her meest recente artikel bovenaan extra groot. Daaronder staan alle andere artikelen in een grid. Klik op de knop bij het artikel om hem te bekijken. Op de artikel pagina kan je het nieuws artikel lezen en onderaan staat de auteur ook kun je comments achter laten lees hieronder meer. Bekijk hieronder hoe het er uit ziet
+
+### no refresh comments
+
+Wil je je mening achter laten over het nieuws artikel? Dat kan nu zelfs zonder dat de hele pagina refresht! Je kan gemakkelijk je comment intypen met je naam en vervolgens op plaatsen als je alles goed heb ingevuld dan zal je zien dat je comment er staat zonder een refresh!! Bekijk hieronder hoe het er uit ziet in actie.
 
 
 ## Installatie
